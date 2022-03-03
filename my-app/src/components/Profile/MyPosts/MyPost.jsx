@@ -4,6 +4,10 @@ const MyPost = () => {
   return (
     <div>
       My Post
+      <div>
+        <textarea></textarea>
+        <button>Click me</button>
+      </div>
       <Post />
     </div>
   );
