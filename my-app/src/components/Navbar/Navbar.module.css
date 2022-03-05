@@ -5,6 +5,11 @@
   padding: 30px;
 }
 
-.item:hover {
+.item a {
+  text-decoration: none;
   color: red;
+}
+.item :focus {
+  color: green;
+  font-weight: bold;
 }
