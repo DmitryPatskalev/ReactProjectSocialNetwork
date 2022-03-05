@@ -1,13 +1,13 @@
-import cs from "./Post.module.css";
-const Post = () => {
+import css from "./Post.module.css";
+const Post = (props) => {
   return (
-    <div>
-      <div className={cs.item}>
+    <div className={css.item}>
+      <div>
         <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/375px-Manchester_United_FC_crest.png" />
-        Post1
+        {props.message}
       </div>
       <div>
-        <span>Like</span>
+        <span>Like</span> {props.like}
       </div>
     </div>
   );

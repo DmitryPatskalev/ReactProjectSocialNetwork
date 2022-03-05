@@ -1,8 +1,4 @@
-.content {
-  grid-area: content;
-  background-color: rgb(248, 244, 8);
-}
-.content img {
+.stadium img {
   width: 1200px;
   height: 300px;
 }
