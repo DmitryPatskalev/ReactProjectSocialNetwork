@@ -1,15 +1,22 @@
 import Post from "./Post/Post";
+import css from "./MyPost.module.css";
 
 const MyPost = () => {
   return (
-    <div>
-      My Post
+    <div className={css.postBlock}>
+      <h3>My Post</h3>
       <div>
-        <textarea></textarea>
-        <button>Click me</button>
+        <div>
+          <textarea></textarea>
+        </div>
+        <div>
+          <button>Click me</button>
+        </div>
       </div>
-      <Post message="How is it going?" like="15" />
-      <Post message="Hi! I am fine, thank you!" like="20" />
+      <div className={css.posts}>
+        <Post message="How is it going?" like="15" />
+        <Post message="Hi! I am fine, thank you!" like="20" />
+      </div>
     </div>
   );
 };
