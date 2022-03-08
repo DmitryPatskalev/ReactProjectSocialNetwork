@@ -1,9 +1,10 @@
 import css from "./Header.module.css";
+import coatofarms from "./../Photo/CoatOfArms.jpg";
 
 const Header = () => {
   return (
     <div className={css.header}>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Arms_of_the_City_of_Manchester.svg/180px-Arms_of_the_City_of_Manchester.svg.png" />
+      <img src={coatofarms} />
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import MyPost from "./MyPosts/MyPost";
 import css from "./Profile.module.css";
+import stadium from "./../Photo/stadium.jpg";
 
 const Profile = () => {
   return (
     <div>
       <div className={css.stadium}>
-        <img src="https://media.gettyimages.com/photos/jun-1996-general-aerial-view-of-old-trafford-before-the-european-c-picture-id943836?s=612x612" />
+        <img src={stadium} />
       </div>
       <div>Ava+description</div>
       <MyPost />
