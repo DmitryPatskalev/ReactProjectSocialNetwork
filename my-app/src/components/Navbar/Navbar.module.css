@@ -9,7 +9,7 @@
   text-decoration: none;
   color: red;
 }
-.item :focus {
+.item :hover {
   color: green;
   font-weight: bold;
 }

@@ -9,6 +9,9 @@
 .dialogsItems a {
   text-decoration: none;
 }
+.dialogsItems :hover {
+  color: red;
+}
 
 .messages {
   padding: 10px;
