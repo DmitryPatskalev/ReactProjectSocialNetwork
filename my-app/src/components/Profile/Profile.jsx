@@ -1,5 +1,5 @@
 import MyPost from "./MyPosts/MyPost";
-import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
   return (

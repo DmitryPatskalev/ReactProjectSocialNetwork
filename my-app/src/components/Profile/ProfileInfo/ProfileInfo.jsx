@@ -1,5 +1,5 @@
 import css from "./ProfileInfo.module.css";
-import stadium from "./../../../Photo/stadium.jpg";
+import stadium from "./../../Photo/stadium.jpg";
 
 const ProfileInfo = () => {
   return (
