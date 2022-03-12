@@ -9,7 +9,7 @@ const MyPost = (props) => {
 
   let postAdd = () => {
     let text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
   };
   let newPostElement = React.useRef();
 
@@ -18,7 +18,10 @@ const MyPost = (props) => {
       <h3>My Post</h3>
       <div>
         <div>
-          <textarea ref={newPostElement}></textarea>
+          <textarea
+            ref={newPostElement}
+            placeholder="Write a message"
+          ></textarea>
         </div>
         <div>
           <button onClick={postAdd}>Click me</button>
