@@ -9,10 +9,17 @@
 .dialogsItems a {
   text-decoration: none;
 }
+
 .dialogsItems :hover {
-  color: red;
+  color: green;
+  font-weight: bold;
 }
 
 .messages {
   padding: 10px;
+}
+.cat img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
