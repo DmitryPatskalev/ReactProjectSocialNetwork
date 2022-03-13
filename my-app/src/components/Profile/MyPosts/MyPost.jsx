@@ -10,6 +10,7 @@ const MyPost = (props) => {
   let postAdd = () => {
     let text = newPostElement.current.value;
     props.addPost(text);
+    newPostElement.current.value = "";
   };
   let newPostElement = React.useRef();
 
