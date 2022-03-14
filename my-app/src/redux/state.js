@@ -6,6 +6,7 @@ let state = {
       { id: 1, message: "How is it going?", like: 15 },
       { id: 2, message: "Hi! I am fine, thank you!", like: 20 },
     ],
+    newPostText: "Internet Technologies",
   },
   dialogsPage: {
     dialogs: [
@@ -24,13 +25,19 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 3,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     like: 10,
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = "";
+  renderIntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   renderIntireTree(state);
 };
 

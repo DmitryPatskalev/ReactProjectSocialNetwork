@@ -7,12 +7,15 @@ const MyPost = (props) => {
     <Post message={p.message} like={p.like} />
   ));
 
-  let postAdd = () => {
-    let text = newPostElement.current.value;
-    props.addPost(text);
-    newPostElement.current.value = "";
+  let addPost = () => {
+    props.addPost();
   };
   let newPostElement = React.useRef();
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  };
 
   return (
     <div className={css.postBlock}>
@@ -21,11 +24,12 @@ const MyPost = (props) => {
         <div>
           <textarea
             ref={newPostElement}
-            placeholder="Write a message"
+            onChange={onPostChange}
+            value={props.newPostText}
           ></textarea>
         </div>
         <div>
-          <button onClick={postAdd}>Click me</button>
+          <button onClick={addPost}>Click me</button>
         </div>
       </div>
       <div className={css.posts}>{postsElement}</div>

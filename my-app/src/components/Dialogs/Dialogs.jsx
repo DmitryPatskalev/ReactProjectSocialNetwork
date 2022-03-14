@@ -13,6 +13,7 @@ const Dialogs = (props) => {
   ));
   let addPost = () => {
     alert(addPostElement.current.value);
+    addPostElement.current.value = "";
   };
   let addPostElement = React.useRef();
 
