@@ -1,3 +1,12 @@
+const ADD_POST = "ADD-POST";
+const ADD_NEW_POST_TEXT = "ADD-NEW-POST-TEXT";
+
+export const addPostActionCreater = () => ({ type: ADD_POST });
+export const updateNewPostActionCreator = (text) => ({
+  type: ADD_NEW_POST_TEXT,
+  newText: text,
+});
+
 let store = {
   _state: {
     profilePage: {
