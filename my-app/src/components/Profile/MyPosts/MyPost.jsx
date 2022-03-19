@@ -30,6 +30,7 @@ const MyPost = (props) => {
             ref={newPostElement}
             onChange={onPostChange}
             value={props.newPostText}
+            placeholder="Write a message"
           ></textarea>
         </div>
         <div>
