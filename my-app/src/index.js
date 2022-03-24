@@ -6,9 +6,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import store from "./redux/redux-store";
-import { Provider } from "./StoreContext";
+import { Provider } from "react-redux";
 
-let renderIntireTree = (state) => {
+let renderIntireTree = () => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
