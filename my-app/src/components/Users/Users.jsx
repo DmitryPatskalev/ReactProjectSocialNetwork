@@ -54,7 +54,7 @@ let Users = (props) => {
     <div>
       {props.users.map((u) => (
         <div>
-          key={u.id}
+          {/* key={u.id} */}
           <span>
             <div>
               <img src={u.photoUrl} className={css.userPhoto} />
