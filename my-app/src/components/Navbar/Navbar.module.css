@@ -2,12 +2,17 @@
   grid-area: nav;
   background-color: rgb(195, 239, 245);
   text-align: center;
-  padding: 30px;
+  padding: 20px;
+  width: 100px;
+}
+.nav div{
+  margin: 10px;
 }
 
 .item a {
   text-decoration: none;
   color: red;
+  font-size: 20px;
 }
 .item :hover {
   color: green;
