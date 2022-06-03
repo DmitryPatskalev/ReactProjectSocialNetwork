@@ -10,7 +10,7 @@ let Users = (props) => {
         followed: false,
         fullName: "Dmitry",
         status: "I am Dude",
-        location: { city: "Minsk", country: "Belrus" },
+        location: { city: "Minsk", country: "Belarus" },
       },
       {
         id: 2,
@@ -19,7 +19,7 @@ let Users = (props) => {
         followed: true,
         fullName: "Tania",
         status: "I am cool girl",
-        location: { city: "Minsk", country: "Belrus" },
+        location: { city: "Minsk", country: "Belarus" },
       },
       {
         id: 3,
@@ -28,7 +28,7 @@ let Users = (props) => {
         followed: false,
         fullName: "Danik",
         status: "I am little boy",
-        location: { city: "Minsk", country: "Belrus" },
+        location: { city: "Minsk", country: "Belarus" },
       },
       {
         id: 4,
@@ -57,7 +57,7 @@ let Users = (props) => {
           {/* key={u.id} */}
           <span>
             <div>
-              <img src={u.photoUrl} className={css.userPhoto} />
+              <img src={u.photoUrl} className={css.userPhoto} alt='photo' />
             </div>
             <div>
               {u.followed ? (
