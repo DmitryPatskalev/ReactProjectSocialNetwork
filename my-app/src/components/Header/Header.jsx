@@ -1,10 +1,10 @@
 import css from "./Header.module.css";
-import coatofarms from "./../Photo/CoatOfArms.jpg";
+import coatOfArms from "./../Photo/CoatOfArms.jpg";
 
 const Header = () => {
   return (
     <div className={css.header}>
-      <img src={coatofarms} />
+      <img src={coatOfArms} alt='coat'  />
     </div>
   );
 };
