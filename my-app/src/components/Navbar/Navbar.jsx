@@ -1,14 +1,16 @@
 import { NavLink } from "react-router-dom";
 import css from "./Navbar.module.css";
+import {useState} from "react";
 
 const Navbar = () => {
+
   return (
     <div className={css.nav}>
       <div className={css.item}>
         <NavLink to="/profile">Profile</NavLink>
       </div>
       <div className={css.item}>
-        <NavLink to="/dialogs">Messages</NavLink>
+        <NavLink  to="/dialogs">Messages</NavLink>
       </div>
       <div className={css.item}>
         <NavLink to="/news">News</NavLink>
