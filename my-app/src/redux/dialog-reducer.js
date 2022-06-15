@@ -1,19 +1,21 @@
+import {v1} from "uuid";
+
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
 const SEND_MESSAGE = "SEND-MESSAGE";
 
 let initialState = {
   dialogs: [
-    { id: 1, name: "Dima" },
-    { id: 2, name: "Tanya" },
-    { id: 3, name: "Danik" },
-    { id: 4, name: "Igor" },
-    { id: 5, name: "Sergei" },
-    { id: 6, name: "Ira" },
+    { id: v1(), name: "Dima" },
+    { id: v1(), name: "Tanya" },
+    { id: v1(), name: "Danik" },
+    { id: v1(), name: "Igor" },
+    { id: v1(), name: "Sergei" },
+    { id: v1(), name: "Ira" },
   ],
   messages: [
-    { id: 1, message: "Hello!!" },
-    { id: 2, message: "How are you today?" },
-    { id: 3, message: "Thanks, fine! And you?" },
+    { id: v1(), message: "Hello!!" },
+    { id: v1(), message: "How are you today?" },
+    { id: v1(), message: "Thanks, fine! And you?" },
   ],
   newMessageBody: "",
 };
@@ -30,7 +32,7 @@ const dialogReducer = (state = initialState, action) => {
       return {
         ...state,
         newMessageBody: "",
-        messages: [...state.messages, { id: 4, message: body }],
+        messages: [...state.messages, { id: v1(), message: body }],
       };
     default:
       return state;
