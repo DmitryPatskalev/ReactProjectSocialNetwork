@@ -2,7 +2,7 @@ import css from "./Users.module.css";
 import {v1} from "uuid";
 
 const Users = (props) => {
-
+   console.log(props.users)
    if (props.users.length === 0) {
       props.setUsers([
          {
@@ -35,7 +35,7 @@ const Users = (props) => {
             followed: true,
             fullName: "Igor",
             status: "I am big man",
-            location: {city: "Bolehov", country: "Ukraine"},
+            location: {city: "Lviv", country: "Ukraine"},
          },
          {
             id: v1(),
