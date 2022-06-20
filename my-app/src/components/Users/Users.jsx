@@ -2,7 +2,7 @@ import css from "./Users.module.css";
 import {v1} from "uuid";
 
 const Users = (props) => {
-   console.log(props.users)
+
    if (props.users.length === 0) {
       props.setUsers([
          {
