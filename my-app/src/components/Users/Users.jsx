@@ -1,52 +1,58 @@
 import css from "./Users.module.css";
-import {v1} from "uuid";
+import userPhoto from './../Photo/Tom.jpg'
+import * as axios from "axios";
+
 
 const Users = (props) => {
 
    if (props.users.length === 0) {
-      props.setUsers([
-         {
-            id: v1(),
-            photoUrl: "https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
-            followed: false,
-            fullName: "Dmitry",
-            status: "I am Dude",
-            location: {city: "Minsk", country: "Belarus"},
-         },
-         {
-            id: v1(),
-            photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
-            followed: true,
-            fullName: "Tania",
-            status: "I am cool girl",
-            location: {city: "Minsk", country: "Belarus"},
-         },
-         {
-            id: v1(),
-            photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
-            followed: false,
-            fullName: "Danik",
-            status: "I am little boy",
-            location: {city: "Minsk", country: "Belarus"},
-         },
-         {
-            id: v1(),
-            photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
-            followed: true,
-            fullName: "Igor",
-            status: "I am big man",
-            location: {city: "Lviv", country: "Ukraine"},
-         },
-         {
-            id: v1(),
-            photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
-            followed: false,
-            fullName: "Julia",
-            status: "I am happy!",
-            location: {city: "Chicago", country: "USA"},
-         },
+      axios.get('https://social-network.samuraijs.com/api/1.0/users').then(responce=>{
+         props.setUsers(responce.data.items)
+      })
 
-      ])
+      // props.setUsers([
+      //    {
+      //       id: v1(),
+      //       photoUrl: "https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
+      //       followed: false,
+      //       fullName: "Dmitry",
+      //       status: "I am Dude",
+      //       location: {city: "Minsk", country: "Belarus"},
+      //    },
+      //    {
+      //       id: v1(),
+      //       photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
+      //       followed: true,
+      //       fullName: "Tania",
+      //       status: "I am cool girl",
+      //       location: {city: "Minsk", country: "Belarus"},
+      //    },
+      //    {
+      //       id: v1(),
+      //       photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
+      //       followed: false,
+      //       fullName: "Danik",
+      //       status: "I am little boy",
+      //       location: {city: "Minsk", country: "Belarus"},
+      //    },
+      //    {
+      //       id: v1(),
+      //       photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
+      //       followed: true,
+      //       fullName: "Igor",
+      //       status: "I am big man",
+      //       location: {city: "Lviv", country: "Ukraine"},
+      //    },
+      //    {
+      //       id: v1(),
+      //       photoUrl:"https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/mission_-impossible-7-crew-calls-tom-cruise-a-nightmare.jpg",
+      //       followed: false,
+      //       fullName: "Julia",
+      //       status: "I am happy!",
+      //       location: {city: "Chicago", country: "USA"},
+      //    },
+      //
+      // ])
    }
 
    return <div className={css.usersList}>
@@ -54,7 +60,7 @@ const Users = (props) => {
       {props.users.map((u) => <div key={u.id}>
   <span>
       <div>
-        <img src={u.photoUrl} className={css.userPhoto} alt='ava'/>
+        <img src={u.photos.small !==null? u.photos.small:userPhoto} className={css.userPhoto} alt='ava'/>
       </div>
       <div>
          {u.followed ?
@@ -63,12 +69,12 @@ const Users = (props) => {
       </div>
   </span>
          <span>
-            <div>{u.fullName}</div>
+            <div>{u.name}</div>
             <div>{u.status}</div>
          </span>
          <span>
-            <div>{u.location.country}</div>
-            <div>{u.location.city}</div>
+            <div>{'u.location.country'}</div>
+            <div>{'u.location.city'}</div>
          </span>
       </div>)}
    </div>
