@@ -5,17 +5,18 @@ import React from "react";
 
 
 class Users extends React.Component {
-   constructor(props) {
-      super(props);
+   componentDidMount() {
       axios.get('https://social-network.samuraijs.com/api/1.0/users').then(responce => {
          this.props.setUsers(responce.data.items)
       })
    }
+
    render() {
       return <div className={css.usersList}>
+
          {this.props.users.map((u) => <div key={u.id}>
   <span>
-      <div>
+      <div >
         <img src={u.photos.small !== null ? u.photos.small : userPhoto} className={css.userPhoto} alt='ava'/>
       </div>
       <div>
@@ -36,6 +37,7 @@ class Users extends React.Component {
       </div>
    }
 }
+
 
 export default Users
 

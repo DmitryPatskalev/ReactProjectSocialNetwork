@@ -3,8 +3,8 @@ import css from "./MyPost.module.css";
 import React from "react";
 
 const MyPost = (props) => {
-  let postsElement = props.posts.map((p) => (
-    <Post message={p.message} like={p.like} />
+  let postsElement = props.posts.map((p,index) => (
+    <Post key={index} message={p.message} like={p.like} />
   ));
 
   let onAddPost = () => {
