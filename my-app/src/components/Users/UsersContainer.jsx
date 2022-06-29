@@ -1,11 +1,11 @@
 import {connect} from "react-redux";
 import {
-   followAC,
-   setCurrentPageAC,
-   setUsersAC,
-   setUserTotalCountAC,
-   toggleIsFetchingAC,
-   unfollowAC
+   follow,
+   setCurrentPage,
+   setUsers,
+   setTotalUsersCount,
+   toggleIsFetching,
+   unfollow
 } from "../../redux/users-reducer";
 import React from "react";
 import * as axios from "axios";
@@ -47,7 +47,6 @@ class UsersContainer extends React.Component {
              unfollow={this.props.unfollow}
          />
       </>
-
    }
 }
 
@@ -60,27 +59,31 @@ let mapStateToProps = (state) => {
       isFetching: state.usersPage.isFetching
    };
 };
-let mapDispatchToProps = (dispatch) => {
-   return {
-      follow: (userId) => {
-         dispatch(followAC(userId));
-      },
-      unfollow: (userId) => {
-         dispatch(unfollowAC(userId));
-      },
-      setUsers: (users) => {
-         dispatch(setUsersAC(users));
-      },
-      setCurrentPage: (pageNumber) => {
-         dispatch(setCurrentPageAC(pageNumber))
-      },
-      setTotalUsersCount: (totalCount) => {
-         dispatch(setUserTotalCountAC(totalCount))
-      },
-      toggleIsFetching: (isFetching) => {
-         dispatch(toggleIsFetchingAC(isFetching))
-      }
-   };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+   follow,unfollow,setUsers,setCurrentPage,setTotalUsersCount,toggleIsFetching
+})(UsersContainer);
+
+
+// let mapDispatchToProps = (dispatch) => {
+//    return {
+//       follow: (userId) => {
+//          dispatch(followAC(userId));
+//       },
+//       unfollow: (userId) => {
+//          dispatch(unfollowAC(userId));
+//       },
+//       setUsers: (users) => {
+//          dispatch(setUsersAC(users));
+//       },
+//       setCurrentPage: (pageNumber) => {
+//          dispatch(setCurrentPageAC(pageNumber))
+//       },
+//       setTotalUsersCount: (totalCount) => {
+//          dispatch(setTotalUsersCountAC(totalCount))
+//       },
+//       toggleIsFetching: (isFetching) => {
+//          dispatch(toggleIsFetchingAC(isFetching))
+//       }
+//    };
+// };
