@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
         <img src={stadium} alt='stadium' />
       </div>
       <div className={css.descriptionBlock}>
-         <img src={props.profile.photos.small} alt='ava'/>
+         <img src={props.profile.photos.large} alt='ava'/>
          Ava+description</div>
     </div>
   );
