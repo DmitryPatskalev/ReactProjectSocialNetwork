@@ -3,7 +3,7 @@ import Profile from "./Profile";
 import * as axios from "axios";
 import {connect} from "react-redux";
 import {setUserProfile} from "../../redux/profile-reducer";
-import { useParams } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 
 
 export function withRouter(Children){
@@ -33,7 +33,7 @@ class ProfileContainer extends React.Component{
    }
 }
 let mapStateToProps = (state)=>({
-  profile:state.profilePage.profile
+  profile:state.profilePage.profile,
 })
 const WithUrlDataContainerComponent = withRouter(ProfileContainer)
 
