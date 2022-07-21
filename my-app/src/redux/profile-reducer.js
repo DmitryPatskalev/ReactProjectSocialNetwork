@@ -1,4 +1,5 @@
 import {v1} from "uuid";
+import {usersAPI} from "../api/api";
 
 
 const ADD_POST = "ADD-POST";
@@ -43,6 +44,12 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({ type: ADD_POST });
 export const setUserProfile = (profile)=>({type:SET_USER_PROFILE, profile})
+export const getUserProfile = (userId)=>(dispatch)=>{
+  usersAPI.getProfile(userId)
+      .then(responce => {
+       dispatch(setUserProfile(responce.data))
+      })
+}
 export const updateNewPostActionCreator = (text) => ({
   type: UPDATE_NEW_POST_TEXT,
   newText: text,
